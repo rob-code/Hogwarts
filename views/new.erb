@@ -1,23 +1,24 @@
 <p>Please enter the details of the new student:</p>
 
 <form method="POST" action="/students">
-<label for="first_name">First Name:</label>
-<input type="text" id = "first_name" name="first_name"/>
+  <label for="first_name">First Name:</label>
+  <input type="text" id = "first_name" name="first_name"/>
 
-<label for="second_name">Second Name:</label>
-<input type="text" name="second_name" id="second_name"/>
+  <label for="second_name">Second Name:</label>
+  <input type="text" name="second_name" id="second_name"/>
 
-<label for="house_id">Select House:</label>
 
-<select id="house_id" name="house_id">
-<% @houses.map do |house| %>
-<option value=<%="'#{house.id}'>#{house.name}"%></option>
-<% end %>
-</select>
+  <label for="house_id">Select House:</label>
 
-<label for="age">Age</label>
-<input type = "number" name="age" id="age"/>
+  <select id="house_id" name="house_id">
+    <% @houses.map do |house| %>
+    <option value=<%="'#{house.id}'>#{house.name}"%></option>
+    <% end %>
+  </select>
 
-<input type="submit" value="Create Student Record"/>
+  <label for="age">Age</label>
+  <input type = "number" name="age" id="age"/>
+
+  <input type="submit" value="Create Student Record"/>
 
 </form>
