@@ -26,15 +26,11 @@ class Student
     @id= student['id'].to_i
   end
 
-def house()
-puts "the student ID is #{@id}"
-sql = "SELECT name FROM houses INNER JOIN students ON students.house_id = houses.id WHERE students.id = #{@id}"
-house = SqlRunner.run(sql).first
-puts house['name']
-
-
-
-end
+  def house()
+    sql = "SELECT * FROM houses INNER JOIN students ON students.house_id = houses.id WHERE students.id = #{@id}"
+    house = SqlRunner.run(sql).first
+    return house['name']
+  end
 
 
   def self.all
