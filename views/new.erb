@@ -7,13 +7,12 @@
 <label for="second_name">Second Name:</label>
 <input type="text" name="second_name" id="second_name"/>
 
-<label for="house-select">Select House: </label>
-<select id="house-select" name="house">
-  <option value="Gryffindor">Gryffindor</option>
-  <option value="Ravenclaw">Ravenclaw</option>
-  <option value="Slytherin">Slytherin</option>
-  <option value="Hufflepuff">Hufflepuff</option>
+<label for="house_id">Select House:</label>
 
+<select id="house_id" name="house_id">
+<% @houses.map do |house| %>
+<option value=<%="'#{house.id}'>#{house.name}"%></option>
+<% end %>
 </select>
 
 <label for="age">Age</label>

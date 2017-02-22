@@ -31,4 +31,10 @@ class House
     result = House.new(house.first)
   end
 
+  def self.get_many(sql)
+    houses = SqlRunner.run(sql)
+    result = houses.map {|house| House.new(house)}
+    return result
+  end
+
 end

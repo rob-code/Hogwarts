@@ -7,7 +7,7 @@ class Student
     @id = options['id'].to_i
     @first_name = options['first_name']
     @second_name = options['second_name']
-    @house_id = options['house_id']
+    @house_id = options['house_id'].to_i
     @age = options['age'].to_i
   end
 
@@ -49,7 +49,6 @@ class Student
     students = SqlRunner.run(sql)
     result = students.map {|student| Student.new(student)}
     return result
-
   end
 
 
